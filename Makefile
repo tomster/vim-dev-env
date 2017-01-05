@@ -1,4 +1,4 @@
-all: ${HOME}/.bashrc ${HOME}/.vimrc ${HOME}/.vim/bundle ${HOME}/.vim/bundle.installed
+all: ${HOME}/.bash_git ${HOME}/.bashrc ${HOME}/.vimrc ${HOME}/.vim/bundle ${HOME}/.vim/bundle.installed
 
 
 install_vimrc: ${HOME}/.vimrc vundle_install
@@ -8,6 +8,12 @@ vundle_install:
 
 vundle_update:
 	vim +PluginUpdate +qall
+
+dot_bash_git:
+	curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > dot_bash_git
+
+${HOME}/.bash_git: dot_bash_git
+	install -m 644 dot_bash_git ${HOME}/.bash_git
 
 ${HOME}/.bashrc:
 	install -m 644 dot_bashrc ${HOME}/.bashrc

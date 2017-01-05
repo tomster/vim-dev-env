@@ -12,6 +12,7 @@ function parse_git_branch {
   echo "("${ref#refs/heads/}")" 
 }
 
+source ~/.bash_git
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWBRANCHREMOTE=1
 export GIT_PS1_SHOWUPSTREAM='auto'

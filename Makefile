@@ -1,4 +1,4 @@
-all: ${HOME}/.vimrc ${HOME}/.vim/bundle ${HOME}/.vim/bundle.installed
+all: ${HOME}/.bashrc ${HOME}/.vimrc ${HOME}/.vim/bundle ${HOME}/.vim/bundle.installed
 
 
 install_vimrc: ${HOME}/.vimrc vundle_install
@@ -8,6 +8,9 @@ vundle_install:
 
 vundle_update:
 	vim +PluginUpdate +qall
+
+${HOME}/.bashrc:
+	install -m 644 dot_bashrc ${HOME}/.bashrc
 
 ${HOME}/.vimrc:
 	install -m 644 dot_vimrc ${HOME}/.vimrc

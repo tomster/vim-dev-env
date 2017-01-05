@@ -1,0 +1,17 @@
+alias ll="ls -la"
+set +o allexport
+unset MANPATH
+alias g="git"
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+
+# prompt
+function parse_git_branch {
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")" 
+}
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWBRANCHREMOTE=1
+export GIT_PS1_SHOWUPSTREAM='auto'
+PS1='# \[\e[0;33;33m\]\u@\H\[\033[0;32m\]`__git_ps1` \[\e[0;33;33m\]\w \n\[\e[0m\]# '

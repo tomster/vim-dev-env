@@ -34,7 +34,8 @@ syntax enable                     " Turn on syntax highlighting.
 runtime macros/matchit.vim        " Load the matchit plugin.
 
 set autoread " shut up when switching branches in git
-
+set background=light
+silent! colorscheme Tomorrow
 "" colorscheme solarized
 function! ToggleBG()
     let s:tbg = &background

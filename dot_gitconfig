@@ -1,0 +1,79 @@
+# ~/.gitconfig
+[user]
+name = Tom Lazar
+email = tomster@pyfidelity.com
+
+[persona]
+personal = Tom Lazar <tom@tomster.org>
+pyfi = Tom Lazar <tomster@pyfidelity.com>
+
+[branch]
+autosetupmerge = true
+	autosetuprebase = remote
+[push]
+default = current
+
+[core]
+excludesfile = ~/.gitignore
+quotepath = false
+pager = "less -RciqMSj5"
+
+
+[color]
+diff = auto
+branch = auto
+status = auto
+
+[alias]
+m = merge --no-ff
+st = status
+ai = add -i
+ap = add -p
+d = diff
+r = remote
+dc = diff --cached
+ci = commit -v
+cia = commit -v -a
+co = checkout
+cp = cherry-pick
+l = log
+ll = log -p
+lt = log trunk..
+llt = log -p trunk..
+lm = log master..
+llm = log -p master..
+b = branch
+sm = submodule
+reha = reset --hard
+feta = fetch --all
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --branches --remotes
+lol = log --graph --decorate --pretty=oneline --abbrev-commit
+lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+dt = difftool
+pure = pull --rebase
+mt = mergetool -y
+fetsch = fetch witsch
+
+ftw = fetch witsch
+persona = !git-persona
+
+[rerere]
+enabled = False
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+
+[credential]
+	helper = osxkeychain
+

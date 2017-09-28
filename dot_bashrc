@@ -2,6 +2,7 @@ alias ll="ls -la"
 set +o allexport
 unset MANPATH
 alias g="git"
+export EDITOR=vim
 export CLICOLOR=1;
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8

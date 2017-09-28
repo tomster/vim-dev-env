@@ -6,6 +6,9 @@ export CLICOLOR=1;
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
 # prompt
 function parse_git_branch {
   ref=$(git-symbolic-ref HEAD 2> /dev/null) || return

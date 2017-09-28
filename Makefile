@@ -1,4 +1,4 @@
-all: ${HOME}/.bash_git ${HOME}/.bashrc ${HOME}/.vimrc ${HOME}/.gitconfig ${HOME}/.vim/bundle ${HOME}/.vim/bundle.installed
+all: ${HOME}/.bash_git ${HOME}/.bashrc ${HOME}/.screenrc ${HOME}/.vimrc ${HOME}/.gitconfig ${HOME}/.vim/bundle ${HOME}/.vim/bundle.installed
 
 
 install_vimrc: ${HOME}/.vimrc vundle_install
@@ -20,6 +20,9 @@ ${HOME}/.bashrc:
 
 ${HOME}/.vimrc:
 	install -m 644 dot_vimrc ${HOME}/.vimrc
+
+${HOME}/.screenrc:
+	install -m 644 dot_screenrc ${HOME}/.screenrc
 
 ${HOME}/.gitconfig:
 	install -m 644 dot_gitconfig ${HOME}/.gitconfig

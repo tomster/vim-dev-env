@@ -1,0 +1,5 @@
+term screen-256color
+defscrollback 5000
+hardstatus alwayslastline
+hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
+termcapinfo xterm* ti@:te@
